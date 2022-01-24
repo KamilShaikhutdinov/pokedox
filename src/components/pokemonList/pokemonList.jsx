@@ -13,7 +13,6 @@ function PokemonList() {
     axios
       .get(`https://pokeapi.co/api/v2/pokemon/?offset=${pagination}`)
       .then(function (response) {
-        console.log(response);
         setPokemonList(response.data.results);
       })
       .catch(setError(hasError))
@@ -21,8 +20,8 @@ function PokemonList() {
   };
   return (
     <>
-      <div className="App">
-        <ul>
+      <div className={styles.App}>
+        <ul className={styles.pokemonList}>
           {pokemonList.map((pokemon) => (
             <li key={pokemon.name}>
               <NavLink
@@ -37,7 +36,7 @@ function PokemonList() {
         </ul>
       </div>
       <div className="buttonContainer">
-        <Button onClick={handleClick}>
+        <Button type="primary " onClick={handleClick}>
           {pagination !== 0 ? "Load more" : "Load pokemons"}
         </Button>
       </div>

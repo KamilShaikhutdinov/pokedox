@@ -1,0 +1,27 @@
+.App {
+  display: flex;
+  justify-content: center;
+  padding-top: 200px;
+  padding-bottom: 200px;
+  background: rgb(51, 197, 199);
+  background: linear-gradient(
+    336deg,
+    rgba(51, 197, 199, 1) 25%,
+    rgba(253, 45, 154, 1) 72%
+  );
+}
+.buttonContainer {
+  display: flex;
+  justify-content: center;
+}
+.pokemonList {
+  column-count: 4;
+  column-gap: 30px;
+  list-style-type: none;
+}
+li {
+  margin-bottom: 20px;
+}
+a {
+    color: black;
+}

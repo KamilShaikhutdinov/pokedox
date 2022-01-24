@@ -1,3 +1,8 @@
 .card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     margin:50px;
+    max-height: 600px;
+    background-color: #b5f5ec;
 }
