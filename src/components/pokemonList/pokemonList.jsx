@@ -1,7 +1,7 @@
 import { useState } from "react";
+import { NavLink } from "react-router-dom";
 import { Button } from "antd";
 import axios from "axios";
-import { NavLink } from "react-router-dom";
 import "antd/dist/antd.css";
 import styles from "./pokemonList.module.css";
 
@@ -19,8 +19,8 @@ function PokemonList() {
       .then(setPagination(pagination + 20));
   };
   return (
-    <>
-      <div className={styles.App}>
+    <div className={styles.container}>
+      <div className={styles.listArea}>
         <ul className={styles.pokemonList}>
           {pokemonList.map((pokemon) => (
             <li key={pokemon.name}>
@@ -35,12 +35,12 @@ function PokemonList() {
           ))}
         </ul>
       </div>
-      <div className="buttonContainer">
-        <Button type="primary " onClick={handleClick}>
+      <div className={styles.buttonContainer}>
+        <Button type="primary " onClick={handleClick} className={styles.button}>
           {pagination !== 0 ? "Load more" : "Load pokemons"}
         </Button>
       </div>
-    </>
+    </div>
   );
 }
 
