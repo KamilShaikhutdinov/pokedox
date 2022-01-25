@@ -20,40 +20,42 @@ function PokemonCard() {
   }, []);
   console.log(pokemonData);
   return (
-    <div className={styles.flip}>
-      <div className={[styles.flip, styles.inner].join(" ")}>
-        <Card
-          title={pokemonName}
-          hoverable={true}
-          bordered={true}
-          className={[styles.flip, styles.front].join(" ")}
-        >
-          {" "}
-          <div>
-            <ul>
-              <li>
-                Type:{" "}
-                {pokemonData.data
-                  ? pokemonData.data.genera[7].genus
-                  : "loading..."}
-              </li>
-              <li>
-                Base happiness:{" "}
-                {pokemonData.data
-                  ? pokemonData.data.base_happiness
-                  : "loading..."}
-              </li>
-              <li>
-                Capture rate:{" "}
-                {pokemonData.data
-                  ? pokemonData.data.capture_rate
-                  : "loading..."}
-              </li>
-            </ul>
+    <div className={styles.container}>
+      <div className={styles.flip}>
+        <div className={[styles.flip, styles.inner].join(" ")}>
+          <Card
+            title={pokemonName}
+            hoverable={true}
+            bordered={true}
+            className={[styles.flip, styles.front].join(" ")}
+          >
+            {" "}
+            <div>
+              <ul>
+                <li>
+                  Type:{" "}
+                  {pokemonData.data
+                    ? pokemonData.data.genera[7].genus
+                    : "loading..."}
+                </li>
+                <li>
+                  Base happiness:{" "}
+                  {pokemonData.data
+                    ? pokemonData.data.base_happiness
+                    : "loading..."}
+                </li>
+                <li>
+                  Capture rate:{" "}
+                  {pokemonData.data
+                    ? pokemonData.data.capture_rate
+                    : "loading..."}
+                </li>
+              </ul>
+            </div>
+          </Card>
+          <div className={[styles.flip, styles.back].join(" ")}>
+            <img src={cardImage} alt="pokemon" className={styles.image} />
           </div>
-        </Card>
-        <div className={[styles.flip, styles.back].join(" ")}>
-          <img src={cardImage} alt="pokemon" className={styles.image} />
         </div>
       </div>
     </div>
