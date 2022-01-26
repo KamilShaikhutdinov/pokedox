@@ -6,8 +6,12 @@ import "antd/dist/antd.css";
 import styles from "./pokemonList.module.css";
 
 function PokemonList() {
-  const [pagination, setPagination] = useState(0);
-  const [pokemonList, setPokemonList] = useState([]);
+  const [pagination, setPagination] = useState(
+    +sessionStorage.getItem("pagination") || 0
+  );
+  const [pokemonList, setPokemonList] = useState(
+    JSON.parse(sessionStorage.getItem("pokemonList")) || []
+  );
   const [hasError, setError] = useState(false);
   const handleClick = () => {
     axios
@@ -18,6 +22,10 @@ function PokemonList() {
       .catch(setError(hasError))
       .then(setPagination(pagination + 20));
   };
+  const handleLinkClick = () => {
+    sessionStorage.setItem("pokemonList", JSON.stringify(pokemonList));
+    sessionStorage.setItem("pagination", pagination);
+  };
   return (
     <div className={styles.container}>
       <div className={styles.listArea}>
@@ -25,6 +33,7 @@ function PokemonList() {
           {pokemonList.map((pokemon) => (
             <li key={pokemon.name}>
               <NavLink
+                onClick={handleLinkClick}
                 to={{
                   pathname: `/pokemon_card/${pokemon.name}`,
                 }}

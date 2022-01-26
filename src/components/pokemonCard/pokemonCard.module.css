@@ -35,15 +35,20 @@
 .flip .back {
   background-image: linear-gradient(to top, #fed6e3 0%, #a8edea 100%);
   color: white;
-  transform: rotateY(180deg);
+  transform: rotateY(-180deg);
   text-align: center;
 }
 .image {
   max-width: 100%;
   max-height: 100%;
 }
-.container{
-    display:flex;
-    justify-content: center;
-    padding-top: 50px;
+.container {
+  display: flex;
+  justify-content: center;
+  padding-top: 50px;
+}
+.buttonContainer {
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
 }

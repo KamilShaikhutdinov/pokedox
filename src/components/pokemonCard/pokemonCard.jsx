@@ -1,8 +1,9 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import { Card } from "antd";
-import cardImage from "../../assets/images/bulbasaur.png";
+import { Card, Button } from "antd";
+import { NavLink } from "react-router-dom";
 import axios from "axios";
+import cardImage from "../../assets/images/bulbasaur.png";
 import "antd/dist/antd.css";
 import styles from "./pokemonCard.module.css";
 
@@ -18,7 +19,6 @@ function PokemonCard() {
       })
       .catch(setError(hasError));
   }, []);
-  console.log(pokemonData);
   return (
     <div className={styles.container}>
       <div className={styles.flip}>
@@ -56,6 +56,13 @@ function PokemonCard() {
           <div className={[styles.flip, styles.back].join(" ")}>
             <img src={cardImage} alt="pokemon" className={styles.image} />
           </div>
+        </div>
+        <div className={styles.buttonContainer}>
+          <NavLink to="/">
+            <Button type="primary " className={styles.button}>
+              Back to list
+            </Button>
+          </NavLink>
         </div>
       </div>
     </div>
