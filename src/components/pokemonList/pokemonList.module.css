@@ -8,6 +8,8 @@
   display: flex;
   justify-content: center;
   padding-top: 200px;
+  font-family: "Dosis", sans-serif;
+  font-size: 16px;
 }
 .buttonContainer {
   display: flex;
@@ -26,6 +28,33 @@ li::first-letter {
 }
 a {
   color: black;
+}
+svg {
+  height: 30px;
+  width: 30px;
+  fill: #1890ff;
+}
+footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 50px;
+  margin-top: -50px;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  position: absolute;
+  margin-left: 40%;
+  margin-right: 40%;
+  transition: opacity 1s;
+  opacity: 0.4;
+}
+footer:hover {
+  transition: opacity 1s;
+  opacity: 1;
+}
+footer svg:hover {
+  transform: translateY(-4px);
 }
 @media (max-width: 576px) {
   .container {
@@ -46,5 +75,9 @@ a {
   .buttonContainer {
     display: flex;
     justify-content: center;
+  }
+  footer {
+    margin-left: 35%;
+    margin-right: 35%;
   }
 }

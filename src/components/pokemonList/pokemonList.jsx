@@ -2,6 +2,9 @@ import { useState } from "react";
 import { NavLink } from "react-router-dom";
 import { Button } from "antd";
 import axios from "axios";
+import { ReactComponent as TwitterLogo } from "../../assets/icons/twtitterLogo.svg";
+import { ReactComponent as YoutubeLogo } from "../../assets/icons/youtubeLogo.svg";
+import { ReactComponent as InstagramLogo } from "../../assets/icons/instagramLogo.svg";
 import "antd/dist/antd.css";
 import styles from "./pokemonList.module.css";
 
@@ -49,6 +52,11 @@ function PokemonList() {
           {pagination !== 0 ? "Load more" : "Load pokemons"}
         </Button>
       </div>
+      <footer>
+        <TwitterLogo />        
+        <InstagramLogo />
+        <YoutubeLogo />
+      </footer>
     </div>
   );
 }
